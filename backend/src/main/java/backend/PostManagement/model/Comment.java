@@ -1,6 +1,7 @@
 package backend.PostManagement.model;
 
 public class Comment {
+
     private String id;
     private String userID;
     private String userFullName;
@@ -36,5 +37,16 @@ public class Comment {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    //Optional: override toString() if needed in the future
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "id='" + id + '\'' +
+                ", userID='" + userID + '\'' +
+                ", userFullName='" + userFullName + '\'' +
+                ", content='" + content + '\'' +
+                '}';
     }
 }
