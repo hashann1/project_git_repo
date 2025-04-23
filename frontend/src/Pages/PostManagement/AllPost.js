@@ -368,7 +368,7 @@ function AllPost() {
         {/* Left side - Search */}
         <Box sx={{ width: '400px', flexShrink: 0 }}> {/* Changed from 300px to 400px */}
           <StyledSearchBar elevation={0}>
-            <Typography variant="h6" sx={{ mb: 2 }}>Search Posts</Typography>
+            <Typography variant="h6" sx={{ mb: 2 }}>Search Recepies</Typography>
             <TextField
               fullWidth
               placeholder="Search by title, description, or category"
@@ -391,9 +391,9 @@ function AllPost() {
         <PostsContainer>
           {filteredPosts.length === 0 ? (
             <Paper sx={{ p: 4, textAlign: 'center', borderRadius: 2 }}>
-              <Typography variant="h6" gutterBottom>No posts found</Typography>
+              <Typography variant="h6" gutterBottom>No Recepies found</Typography>
               <button className='not_found_btn' onClick={() => navigate('/addNewPost')}>
-                Create New Post
+                Create New Recepy
               </button>
             </Paper>
           ) : (
