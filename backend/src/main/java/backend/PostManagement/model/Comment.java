@@ -7,46 +7,49 @@ public class Comment {
     private String userFullName;
     private String content;
 
+    // Getters and Setters
     public String getId() {
-        return id;
+        return this.id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String idValue) {
+        this.id = idValue;
     }
 
     public String getUserID() {
-        return userID;
+        return this.userID;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setUserID(String userIdValue) {
+        this.userID = userIdValue;
     }
 
     public String getUserFullName() {
-        return userFullName;
+        return this.userFullName;
     }
 
-    public void setUserFullName(String userFullName) {
-        this.userFullName = userFullName;
+    public void setUserFullName(String fullName) {
+        this.userFullName = fullName;
     }
 
     public String getContent() {
-        return content;
+        return this.content;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setContent(String textContent) {
+        this.content = textContent;
     }
 
-    //Optional: override toString() if needed in the future
+    // toString Method
     @Override
     public String toString() {
-        return "Comment{" +
-                "id='" + id + '\'' +
-                ", userID='" + userID + '\'' +
-                ", userFullName='" + userFullName + '\'' +
-                ", content='" + content + '\'' +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Comment{");
+        sb.append("id='").append(id).append('\'');
+        sb.append(", userID='").append(userID).append('\'');
+        sb.append(", userFullName='").append(userFullName).append('\'');
+        sb.append(", content='").append(content).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }
