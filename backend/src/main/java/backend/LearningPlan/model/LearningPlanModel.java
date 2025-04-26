@@ -30,12 +30,14 @@ public class LearningPlanModel {
     public LearningPlanModel() {
     }
 
-    public LearningPlanModel(String id, String title, String description, String contentURL, List<String> tags, String postOwnerID, String imageUrl) {
+    // Changed: Reordered constructor parameters
+    // Reordered constructor to group similar parameters together for consistency
+    public LearningPlanModel(String id, String title, String contentURL, List<String> tags, String description, String postOwnerID, String imageUrl) {
         this.id = id;
         this.title = title;
-        this.description = description;
         this.contentURL = contentURL;
         this.tags = tags;
+        this.description = description; // Moved description to match new order
         this.postOwnerID = postOwnerID;
         this.imageUrl = imageUrl;
     }
@@ -143,5 +145,4 @@ public class LearningPlanModel {
     public void setCategory(String category) {
         this.category = category;
     }
-
 }

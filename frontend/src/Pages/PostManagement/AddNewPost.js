@@ -110,7 +110,7 @@ function AddNewPost() {
                   required
                   placeholder=" "
                 />
-                <label htmlFor="title">Post Title</label>
+                <label htmlFor="title">Recpy name</label>
               </div>
 
               <div className="floating-input">
@@ -122,7 +122,7 @@ function AddNewPost() {
                   placeholder=" "
                   rows={6}
                 />
-                <label htmlFor="description">Write your story...</label>
+                <label htmlFor="description">Write your recepy instractions...</label>
               </div>
 
               <div className="floating-input">
@@ -133,12 +133,15 @@ function AddNewPost() {
                   required
                 >
                   <option value="" disabled></option>
-                  <option value="Tech">Tech</option>
-                  <option value="Programming">Programming</option>
-                  <option value="Cooking">Cooking</option>
-                  <option value="Photography">Photography</option>
+                  <option value="Grains & Cereals">Grains & Cereals</option>
+                  <option value="Beverages ">Beverages </option>
+                  <option value="Sweets & Desserts">Sweets & Desserts</option>
+                  <option value="Snacks ">Snacks </option>
+                  <option value="Protein & Fat Sources">Protein & Fat Sources</option>
+                  <option value="Soups & Stews ">Soups & Stews </option>
+                  <option value="Fast Food">Fast Food</option>
                 </select>
-                <label htmlFor="category">Select Category</label>
+                <label htmlFor="category">Select Food Category</label>
               </div>
             </div>
 
@@ -199,7 +202,7 @@ function AddNewPost() {
             </div>
 
             <button type="submit" className="publish-button">
-              Publish Post
+              Publish Recepy
             </button>
           </form>
         </div>
