@@ -42,3 +42,94 @@
   width: 100%;
   padding-top: 8px;
 }
+.page_container {
+  background: #f3f4f6;
+  min-height: 100vh;
+}
+
+.notifications_wrapper {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.notifications_title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.notification_card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: background 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification_card.unread {
+  background: #e0f2fe;
+}
+
+.notification_card.read {
+  background: #f9fafb;
+  opacity: 0.8;
+}
+
+.notification_content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.notification_text {
+  flex: 1;
+}
+
+.notification_message {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.notification_time {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.notification_actions {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.action_icon {
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: #4b5563;
+  transition: color 0.3s;
+}
+
+.mark_icon:hover {
+  color: #059669;
+}
+
+.delete_icon:hover {
+  color: #dc2626;
+}
+
+.not_found_box {
+  text-align: center;
+  margin-top: 3rem;
+  color: #6b7280;
+}
+
+.not_found_msg {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
