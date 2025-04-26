@@ -60,6 +60,8 @@
 
 .Auth_signupPrompt {
   text-align: end;
+  margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
 .Auth_subheading,
@@ -115,6 +117,12 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.Auth_button:hover {
+  transform: translateY(-2px);
+  background-color: #ff715b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .selectedimagepreview {
   width: 150px;
   height: 150px;
@@ -132,6 +140,24 @@
   overflow: hidden;
   position: relative;
   margin: 0 auto;
+}
+
+.profileicon {
+  font-size: 150px;
+  color: #b0b0b0;
+}
+
+.selected-image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 10px;
+  border: 2px solid #cacaca;
+}
+
+.hidden-input {
+  display: none;
 }
 
 .newscrol_from {
@@ -160,11 +186,6 @@
   background: #f1f1f1;
 }
 
-.profileicon {
-  font-size: 150px;
-  color: #b0b0b0;
-}
-
 .from_input_con {
   display: flex;
   align-items: center;
@@ -173,21 +194,14 @@
   gap: 15px;
 }
 
-.Auth_button:hover {
-  transform: translateY(-2px);
-  background-color: #ff715b;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.Auth_signupPrompt {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-}
-
 .Auth_signupLink {
   color: black;
   font-weight: 600;
   cursor: pointer;
+}
+
+.Auth_signupLink:hover {
+  color: #5d5d5d;
 }
 
 .add_s_btn {
@@ -196,32 +210,8 @@
   border: none;
   border-radius: 4px;
   color: #ffffff;
-  font-size: 16px;
   font-size: 43px;
   cursor: pointer;
-}
-
-.searchinput {
-  width: 670px;
-  margin-bottom: 25px;
-}
-
-.Auth_googleButton {
-  margin-top: 1rem;
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #ffffff;
-  border: 1px solid #474545;
-  border-radius: 80px;
-  color: #474545;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .skil_dis_con {
@@ -250,18 +240,38 @@
   margin-left: 10px;
 }
 
-.glogo {
-  width: 25px;
+.searchinput {
+  width: 670px;
+  margin-bottom: 25px;
+}
+
+.Auth_googleButton {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #ffffff;
+  border: 1px solid #474545;
+  border-radius: 80px;
+  color: #474545;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .Auth_googleButton:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.Auth_signupLink:hover {
-  color: #5d5d5d;
+.glogo {
+  width: 25px;
 }
 
+/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -273,6 +283,7 @@
   }
 }
 
+/* Verification Modal */
 .verification-modal {
   position: fixed;
   top: 0;
@@ -286,13 +297,6 @@
   z-index: 1000;
 }
 
-.veryname {
-  font-size: 26px;
-  font-weight: 600;
-  color: #004c5d;
-  margin-bottom: 10px;
-}
-
 .modal-content {
   background-color: #ffffff;
   padding: 20px;
@@ -300,6 +304,13 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
   width: 600px;
+}
+
+.veryname {
+  font-size: 26px;
+  font-weight: 600;
+  color: #004c5d;
+  margin-bottom: 10px;
 }
 
 .verification-input {
@@ -328,24 +339,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.newproinput {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.selected-image-preview {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-top: 10px;
-  border: 2px solid #cacaca;
-}
-
-.hidden-input {
-  display: none;
-}
-
+/* Modern Auth Container */
 .modern-auth-container {
   min-height: 100vh;
   display: flex;
@@ -367,7 +361,7 @@
   overflow: hidden;
 }
 
-/* Remove or comment out these classes as they're no longer needed */
+/* Remove unused */
 .Auth_content_img,
 .Auth_content_img_reg,
 .auth-right-panel,
@@ -375,6 +369,7 @@
   display: none;
 }
 
+/* Login Page Styles */
 .login-container {
   min-height: 100vh;
   display: flex;
@@ -429,272 +424,6 @@
 }
 
 .login-input:focus {
-  border-color: #4A90E2;
-  outline: none;
-}
-
-.login-button {
-  background: #4A90E2;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.login-button:hover {
-  background: #357ABD;
-}
-
-.divider {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 20px 0;
-}
-
-.divider::before,
-.divider::after {
-  content: '';
-  flex: 1;
-  border-bottom: 1px solid #ddd;
-}
-
-.divider span {
-  padding: 0 10px;
-  color: #666;
-  font-size: 12px;
-}
-
-.google-login-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 12px;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.google-login-button:hover {
-  background: #f5f5f5;
-}
-
-.signup-text {
-  text-align: center;
-  color: #666;
-  font-size: 14px;
-}
-
-.signup-link {
-  color: #4A90E2;
-  margin-left: 5px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.signup-link:hover {
-  text-decoration: underline;
-}
-
-.auth-container {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f5f5f5;
-  padding: 20px;
-}
-
-.auth-wrapper {
-  display: flex;
-  width: 1000px;
-  max-width: 100%;
-  min-height: 600px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.auth-left {
-  flex: 1;
-  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  position: relative;
-}
-
-.auth-overlay {
-  color: white;
-  text-align: center;
-  z-index: 1;
-}
-
-.auth-left h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
-}
-
-.auth-left p {
-  font-size: 1.2em;
-  opacity: 0.9;
-}
-
-.auth-right {
-  flex: 1;
-  padding: 40px;
-}
-
-.auth-box {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.auth-box h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
-  color: #1f2937;
-}
-
-.auth-subtitle {
-  color: #6b7280;
-  margin-bottom: 30px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  color: #4b5563;
-  font-weight: 500;
-}
-
-.form-control {
-  width: 100%;
-  padding: 12px 16px;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  font-size: 1em;
-  transition: all 0.3s;
-}
-
-.form-control:focus {
   border-color: #6366f1;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
-
-.auth-button {
-  width: 100%;
-  padding: 12px;
-  background: #6366f1;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1em;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.auth-button:hover {
-  background: #4f46e5;
-}
-
-.auth-divider {
-  text-align: center;
-  margin: 20px 0;
-  position: relative;
-}
-
-.auth-divider::before,
-.auth-divider::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 45%;
-  height: 1px;
-  background: #e5e7eb;
-}
-
-.auth-divider::before {
-  left: 0;
-}
-
-.auth-divider::after {
-  right: 0;
-}
-
-.auth-divider span {
-  background: white;
-  padding: 0 10px;
-  color: #6b7280;
-  font-size: 0.9em;
-}
-
-.google-button {
-  width: 100%;
-  padding: 12px;
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.google-button:hover {
-  background: #f9fafb;
-}
-
-.google-icon {
-  width: 20px;
-  height: 20px;
-}
-
-.auth-footer {
-  text-align: center;
-  margin-top: 20px;
-  color: #6b7280;
-}
-
-.auth-link {
-  color: #6366f1;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.auth-link:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  .auth-wrapper {
-    flex-direction: column;
-  }
-  
-  .auth-left {
-    display: none;
-  }
-  
-  .auth-right {
-    padding: 20px;
-  }
-}
-
