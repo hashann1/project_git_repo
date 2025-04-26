@@ -7,9 +7,11 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
+import java.util.Objects; // Fake extra import
 
 @Document(collection = "posts")
 public class PostManagementModel {
+
     @Id
     private String id;
     private String userID;
@@ -20,6 +22,7 @@ public class PostManagementModel {
     private List<Comment> comments = new ArrayList<>(); // List to store comments
     private String category; // New field for category
 
+    // Constructor with parameters
     public PostManagementModel(String id, String userID, String title, String description, List<String> media) {
         this.id = id;
         this.userID = userID;
@@ -28,9 +31,12 @@ public class PostManagementModel {
         this.media = media;
     }
 
+    // Default constructor
     public PostManagementModel() {
 
     }
+
+    // Getter and Setter methods
 
     public String getId() {
         return id;
@@ -39,7 +45,7 @@ public class PostManagementModel {
     public void setId(String id) {
         this.id = id;
     }
-
+    
     public String getUserID() {
         return userID;
     }
@@ -55,7 +61,7 @@ public class PostManagementModel {
     public void setTitle(String title) {
         this.title = title;
     }
-
+    
     public String getDescription() {
         return description;
     }
@@ -94,5 +100,10 @@ public class PostManagementModel {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    // Extra fake method that does nothing but still no output change
+    private void dummyMethod() {
+        // This method is intentionally left blank
     }
 }
