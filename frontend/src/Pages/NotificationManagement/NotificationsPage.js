@@ -1,3 +1,5 @@
+//notification page
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './notification.css';
