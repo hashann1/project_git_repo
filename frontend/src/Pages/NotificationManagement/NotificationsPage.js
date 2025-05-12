@@ -8,7 +8,7 @@ import NavBar from '../../Components/NavBar/NavBar';
 import { MdOutlineMarkChatRead } from "react-icons/md";
 
 function NotificationsPage() {
-  const [notifications, setNotifications] = useState([]);
+  const [notificationsList, setNotificationsList] = useState([]);
   const userId = localStorage.getItem('userID');
 
   useEffect(() => {
@@ -24,9 +24,10 @@ function NotificationsPage() {
     if (userId) {
       fetchNotifications();
     }
+
   }, [userId]);
 
-  const handleMarkAsRead = async (id) => {
+  const handleMarkAsRead = async (notifId) => {
     try {
       await axios.put(`http://localhost:8080/notifications/${id}/markAsRead`);
       setNotifications((prev) =>
@@ -37,7 +38,7 @@ function NotificationsPage() {
     }
   };
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (notifId) => {
     try {
       await axios.delete(`http://localhost:8080/notifications/${id}`);
       setNotifications((prev) => prev.filter((n) => n.id !== id));
