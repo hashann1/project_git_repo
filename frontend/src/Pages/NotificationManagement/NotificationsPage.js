@@ -1,3 +1,5 @@
+//notification page
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './notification.css';
@@ -13,10 +15,9 @@ function NotificationsPage() {
     const fetchNotifications = async () => {
       try {
         const response = await axios.get(`http://localhost:8080/notifications/${userId}`);
-        const fetchedData = response.data;
-        setNotificationsList(fetchedData);
-      } catch (err) {
-        console.error('Error fetching notifications:', err);
+        setNotifications(response.data);
+      } catch (error) {
+        console.error('Error fetching notifications:', error);
       }
     };
 
@@ -28,58 +29,52 @@ function NotificationsPage() {
 
   const handleMarkAsRead = async (notifId) => {
     try {
-      await axios.put(`http://localhost:8080/notifications/${notifId}/markAsRead`);
-      setNotificationsList((prevList) =>
-        prevList.map((n) => (n.id === notifId ? { ...n, read: true } : n))
+      await axios.put(`http://localhost:8080/notifications/${id}/markAsRead`);
+      setNotifications((prev) =>
+        prev.map((n) => (n.id === id ? { ...n, read: true } : n))
       );
-    } catch (err) {
-      console.error('Error marking notification as read:', err);
+    } catch (error) {
+      console.error('Error marking notification as read:', error);
     }
   };
 
   const handleDelete = async (notifId) => {
     try {
-      await axios.delete(`http://localhost:8080/notifications/${notifId}`);
-      setNotificationsList((prevList) => prevList.filter((n) => n.id !== notifId));
-    } catch (err) {
-      console.error('Error deleting notification:', err);
+      await axios.delete(`http://localhost:8080/notifications/${id}`);
+      setNotifications((prev) => prev.filter((n) => n.id !== id));
+    } catch (error) {
+      console.error('Error deleting notification:', error);
     }
   };
 
   return (
     <div className='page_container'>
       <NavBar />
-
       <div className='notifications_wrapper'>
         <h2 className='notifications_title'>Notifications</h2>
-
-        {notificationsList.length === 0 ? (
+        {notifications.length === 0 ? (
           <div className='not_found_box'>
             <div className='not_found_img'></div>
             <p className='not_found_msg'>No notifications yet.</p>
           </div>
         ) : (
-          notificationsList.map((notif) => (
-            <div
-              key={notif.id}
-              className={`notification_card ${notif.read ? 'read' : 'unread'}`}
-            >
+          notifications.map((notification) => (
+            <div key={notification.id} className={`notification_card ${notification.read ? 'read' : 'unread'}`}>
               <div className='notification_content'>
                 <div className='notification_text'>
-                  <p className='notification_message'>{notif.message}</p>
-                  <p className='notification_time'>{new Date(notif.createdAt).toLocaleString()}</p>
+                  <p className='notification_message'>{notification.message}</p>
+                  <p className='notification_time'>{new Date(notification.createdAt).toLocaleString()}</p>
                 </div>
-
                 <div className='notification_actions'>
-                  {!notif.read && (
+                  {!notification.read && (
                     <MdOutlineMarkChatRead
-                      onClick={() => handleMarkAsRead(notif.id)}
+                      onClick={() => handleMarkAsRead(notification.id)}
                       className='action_icon mark_icon'
                       title='Mark as Read'
                     />
                   )}
                   <RiDeleteBin6Fill
-                    onClick={() => handleDelete(notif.id)}
+                    onClick={() => handleDelete(notification.id)}
                     className='action_icon delete_icon'
                     title='Delete Notification'
                   />
