@@ -465,8 +465,14 @@
   border-radius: 8px;
   width: 48px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
+
 }
+.material-add-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+}
+
 
 /* Media Section */
 .material-media-buttons {
