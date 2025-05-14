@@ -110,7 +110,7 @@ function AddNewPost() {
                   required
                   placeholder=" "
                 />
-                <label htmlFor="title">Recpy name</label>
+                <label htmlFor="title">Recipe name</label>
               </div>
 
               <div className="floating-input">
@@ -122,7 +122,7 @@ function AddNewPost() {
                   placeholder=" "
                   rows={6}
                 />
-                <label htmlFor="description">Write your recepy instractions...</label>
+                <label htmlFor="description">Write your recipe instructions...</label>
               </div>
 
               <div className="floating-input">
@@ -141,7 +141,7 @@ function AddNewPost() {
                   <option value="Soups & Stews ">Soups & Stews </option>
                   <option value="Fast Food">Fast Food</option>
                 </select>
-                <label htmlFor="category">Select Food Category</label>
+                <label htmlFor="category">Select A Food Category</label>
               </div>
             </div>
 
@@ -160,7 +160,7 @@ function AddNewPost() {
                     <span>+</span>
                   </div>
                   <h3>Add Media Files</h3>
-                  <p>Drag & drop or click to upload</p>
+                  <p>Drag & drop or click to upload media</p>
                   <small>Max: 3 images or 1 video (30s)</small>
                 </div>
               </label>
