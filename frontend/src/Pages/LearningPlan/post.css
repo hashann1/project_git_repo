@@ -223,7 +223,7 @@
 .action_btn_icon_post {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   justify-content: center;
 }
 .time {
@@ -240,6 +240,7 @@
   font-size: 20px;
   text-transform: capitalize;
   font-style: normal;
+  text-align: left;
 }
 .card_post_description {
   color: #676565;
@@ -256,7 +257,7 @@
 
 /* ========== Video Content ========== */
 .vide_card_ful {
-  width: 100%;
+  width: 95%;
 }
 .video_card {
   width: 100%;
