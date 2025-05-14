@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
+/* Reset and global styles */
 * {
   padding: 0;
   margin: 0;
@@ -7,6 +8,7 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* Container for authentication pages */
 .Auth_container {
   min-height: 100vh;
   display: flex;
@@ -14,6 +16,7 @@
   align-items: center;
 }
 
+/* Logo styling */
 .Auth_logo {
   background-image: url("./img/logocover.png");
   width: 130px;
@@ -25,10 +28,12 @@
   margin-right: auto;
 }
 
+/* Padding wrapper */
 .new_content {
   padding: 0 20px;
 }
 
+/* Inner container with form box styling */
 .Auth_innerContainer {
   background-color: #ffffff;
   border-radius: 16px;
@@ -40,6 +45,7 @@
   animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Main content section layout */
 .Auth_content {
   flex: 1;
   display: flex;
@@ -50,6 +56,7 @@
   width: 100%;
 }
 
+/* Heading for the authentication form */
 .Auth_heading {
   width: 100%;
   font-weight: 600;
@@ -58,10 +65,12 @@
   margin-bottom: 30px;
 }
 
+/* Text prompt aligned to the right */
 .Auth_signupPrompt {
   text-align: end;
 }
 
+/* Subheading and prompt shared style */
 .Auth_subheading,
 .Auth_signupPrompt {
   font-weight: 400;
@@ -69,17 +78,20 @@
   color: #5d5d5d;
 }
 
+/* Form wrapper styling */
 .Auth_form {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
 }
 
+/* Each input group spacing */
 .Auth_formGroup {
   width: 100%;
   margin-bottom: 1rem;
 }
 
+/* Label for inputs */
 .Auth_label {
   display: block;
   margin-bottom: 0.5rem;
@@ -87,6 +99,7 @@
   text-transform: capitalize;
 }
 
+/* Input field style */
 .Auth_input {
   width: 100%;
   padding: 10px;
@@ -96,12 +109,14 @@
   font-size: 16px;
 }
 
+/* Button group styling for skill add */
 .skil_addbtn {
   display: flex;
   width: 100%;
   gap: 18px;
 }
 
+/* Button styling */
 .Auth_button {
   width: 100%;
   padding: 10px;
@@ -115,11 +130,13 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Preview for selected image */
 .selectedimagepreview {
   width: 150px;
   height: 150px;
 }
 
+/* Circular container for profile image */
 .profile-icon-container {
   display: flex;
   justify-content: center;
@@ -134,6 +151,7 @@
   margin: 0 auto;
 }
 
+/* Scrollable form section with custom scrollbar */
 .newscrol_from {
   max-height: 400px;
   overflow-y: auto;
@@ -143,9 +161,11 @@
   scrollbar-color: #888 #f1f1f1;
 }
 
+/* Webkit specific scrollbar styling */
 .newscrol_from::-webkit-scrollbar {
   width: 8px;
 }
+
 
 .newscrol_from::-webkit-scrollbar-thumb {
   background-color: #888;
