@@ -247,11 +247,13 @@ function MyLearningPlan() {
                 <button className='not_found_btn' onClick={() => (window.location.href = '/addLearningPlan')}>Create New Post</button>
               </div>
             ) : (
-              filteredPosts.map((post) => (
-                <div key={post.id} className='post_card_new'>
-                  {renderPostByTemplate(post)}
-                </div>
-              ))
+              filteredPosts.map(function(post) {  // Change: Replaced arrow function with regular function
+             return (
+             <div key={post.id} className='post_card_new'>
+             {renderPostByTemplate(post)}
+             </div>
+              );
+             })
             )}
           </div>
         </div>
