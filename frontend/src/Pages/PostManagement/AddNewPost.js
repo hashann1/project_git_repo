@@ -1,4 +1,4 @@
-//adding new posts
+//adding new posts 
 import React, { useState } from 'react';
 import axios from 'axios';
 import NavBar from '../../Components/NavBar/NavBar';
@@ -98,6 +98,7 @@ function AddNewPost() {
             </div>
             <div className="header-decoration"></div>
           </div>
+
 
           <form onSubmit={handleSubmit} className="create-post-form">
             <div className="form-floating-group">
