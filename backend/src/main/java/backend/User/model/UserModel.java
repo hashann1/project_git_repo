@@ -1,7 +1,4 @@
-//user model.java
-
 package backend.User.model;
-
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

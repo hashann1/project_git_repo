@@ -1,118 +1,102 @@
-/* Main wrapper ensuring the page takes full height and has a nice gradient background */
 .page-wrapper {
-  min-height: 100vh; /* Ensures it spans at least the full viewport height */
-  background: linear-gradient(135deg, #2c3e50, #3498db); /* Elegant diagonal gradient */
-  padding: 2rem; /* Uniform padding around the page */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  padding: 2rem;
 }
 
-/* Container to center the content and limit its width */
 .content-container {
-  max-width: 800px; /* Keeps form at a readable width */
-  margin: 0 auto; /* Centers the container horizontally */
-  padding-top: 2rem; /* Adds space above the form */
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 2rem;
 }
 
-/* Card-like container for the form, giving it a modern UI feel */
 .form-card {
-  background: white; /* Contrast background for the card */
-  border-radius: 15px; /* Smooth rounded corners */
-  padding: 2rem; /* Spacing inside the card */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Header section of the form */
 .form-header {
-  text-align: center; /* Center-aligns the title and description */
-  margin-bottom: 2rem; /* Separates it from the form fields */
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .form-header h1 {
-  color: #2c3e50; /* Deep blue tone for strong visual weight */
-  font-size: 2rem; /* Balanced heading size */
-  margin-bottom: 0.5rem; /* Slight gap before the paragraph */
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .form-header p {
-  color: #7f8c8d; /* Light grey tone for secondary text */
+  color: #7f8c8d;
 }
 
-/* Layout for the whole form */
 .modern-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Consistent spacing between form groups */
+  gap: 1.5rem;
 }
 
-/* Each input group */
 .input-group {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Same vertical spacing for uniformity */
+  gap: 1.5rem;
 }
 
-/* Common container for inputs */
 .form-control {
-  position: relative; /* Allows absolutely positioned label inside */
+  position: relative;
 }
 
-/* Input, textarea, and select styles */
 .form-control input,
 .form-control textarea,
 .form-control select {
-  width: 100%; /* Full-width fields */
-  padding: 1rem; /* Comfortable padding inside fields */
-  border: 2px solid #e0e0e0; /* Light border for clean look */
-  border-radius: 8px; /* Rounded corners */
-  background: #f8f9fa; /* Slight off-white for soft contrast */
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #f8f9fa;
   font-size: 1rem;
-  color: #2c3e50; /* Dark text for readability */
+  color: #2c3e50;
 }
 
-/* Label positioned inside the input area */
 .form-control label {
   position: absolute;
   left: 1rem;
   top: 1rem;
-  color: #7f8c8d; /* Subtle label color */
-  background: #f8f9fa; /* Matches input background */
-  padding: 0 0.5rem; /* Padding to avoid overlap with input border */
-  pointer-events: none; /* Prevents label from interfering with typing */
-  transition: all 0.2s ease; /* Add transition if you want to animate on focus */
+  color: #7f8c8d;
+  background: #f8f9fa;
+  padding: 0 0.5rem;
 }
 
-/* Focus styles to highlight active field */
 .form-control input:focus,
 .form-control textarea:focus,
 .form-control select:focus {
-  border-color: #3498db; /* Blue border on focus for clarity */
-  outline: none; /* Removes default outline */
+  border-color: #3498db;
+  outline: none;
 }
 
-/* Section for file upload */
 .upload-section {
-  background: #f8f9fa; /* Light background to distinguish the area */
+  background: #f8f9fa;
   border-radius: 8px;
   padding: 1.5rem;
 }
 
-/* Dashed area for drag-and-drop upload */
 .upload-box {
-  border: 2px dashed #bdc3c7; /* Dashed border to indicate upload zone */
+  border: 2px dashed #bdc3c7;
   border-radius: 8px;
   padding: 2rem;
   text-align: center;
-  background: white; /* Clean background for file area */
+  background: white;
 }
 
-/* Upload clickable area styling */
 .upload-area {
-  cursor: pointer; /* Indicates interactivity */
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem; /* Spacing between upload elements (icon, text, etc.) */
+  gap: 1rem;
 }
-
 
 .upload-icon {
   font-size: 2rem;

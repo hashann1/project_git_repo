@@ -13,11 +13,9 @@ function UpdatePost() {
   const [existingMedia, setExistingMedia] = useState([]); // Initialize as an empty array
   const [newMedia, setNewMedia] = useState([]); // New media files to upload
   const [loading, setLoading] = useState(true); // Add loading state
-  const [mediaPreviews, setMediaPreviews] = useState([]); 
+  const [mediaPreviews, setMediaPreviews] = useState([]);
 
-}
-
-useEffect(() => {
+  useEffect(() => {
     // Fetch the post details
     const fetchPost = async () => {
       try {

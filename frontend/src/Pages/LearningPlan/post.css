@@ -1,7 +1,6 @@
-/* ========== Layout Containers ========== */
 .continer {
   width: 1440px;
-  margin: 0 auto; /* Center horizontally */
+  margin: 0 auto;
 }
 .continSection {
   width: 100%;
@@ -13,12 +12,9 @@
   padding-bottom: 50px;
   padding-top: 100px;
 }
-/* ========== Image Styling ========== */
 .image_card{
   width: 100%;
 }
-
-/* ========== Icon and Button Styles ========== */
 .newpart_set_icon{
   font-size: 25px;
   cursor: pointer;
@@ -62,8 +58,6 @@
   top: 160px;
   text-align: start;
 }
-
-/* ========== Post and Not Found Styles ========== */
 .not_found_box {
   width: 670px;
   border: 1px solid #004c5d;
@@ -85,7 +79,6 @@
   flex-direction: column;
   align-items: flex-start;
   display: flex;
-  box-sizing: content-box;
 }
 .post_card_new {
   width: 700px;
@@ -120,8 +113,6 @@
   justify-content: center;
   gap: 45px;
 }
-
-/* ========== Add Button (Floating) ========== */
 .add_new_btn {
   cursor: pointer;
   background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
@@ -142,8 +133,6 @@
   font-size: 35px;
   color: white;
 }
-
-/* ========== Post Content Details ========== */
 .name_section_post {
   display: flex;
   width: 100%;
@@ -151,7 +140,6 @@
   gap: 10px;
   justify-content: flex-start;
 }
-/* ========== Interaction Buttons ========== */
 .flow_btn {
   background-color: transparent;
   border: 0;
@@ -223,7 +211,7 @@
 .action_btn_icon_post {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
 }
 .time {
@@ -232,15 +220,11 @@
   font-size: 15px;
   font-weight: 500;
 }
-
-/* ========== Post Text Styling ========== */
 .card_post_title {
   color: black;
   font-weight: 500;
   font-size: 20px;
   text-transform: capitalize;
-  font-style: normal;
-  text-align: left;
 }
 .card_post_description {
   color: #676565;
@@ -254,19 +238,14 @@
   font-weight: 500;
   color: #676565;
 }
-
-/* ========== Video Content ========== */
 .vide_card_ful {
-  width: 95%;
+  width: 100%;
 }
 .video_card {
   width: 100%;
   border-radius: 5px;
   height: 350px;
 }
-
-/* ========== Like and Comment Buttons ========== */
-
 .likebtn {
   color: #676565;
   cursor: pointer;
@@ -298,9 +277,6 @@
   align-items: center;
   gap: 10px;
 }
-
-/* ========== Comments Section ========== */
-
 .comnt_card {
   border-radius: 5px;
   padding: 5px 10px 10px 10px;
@@ -397,9 +373,6 @@
 .view_all_comments_btn:hover {
   font-weight: 800;
 }
-
-/* ========== Form Styles ========== */
-
 .from_continer {
   display: flex;
   align-items: center;
@@ -422,9 +395,6 @@ textarea {
   width: 100%;
   gap: 8px;
 }
-
-/* ========== Media Collage and Modal ========== */
-
 
 .media-collage {
   display: grid;
@@ -512,9 +482,6 @@ textarea {
 .close-modal-btn:hover {
   background: #084a7a;
 }
-
-/* ========== Miscellaneous ========== */
-
 .seket_media {
   display: flex;
   width: 100%;
