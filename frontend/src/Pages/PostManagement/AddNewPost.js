@@ -1,4 +1,4 @@
-//adding new posts
+//adding new posts 
 import React, { useState } from 'react';
 import axios from 'axios';
 import NavBar from '../../Components/NavBar/NavBar';
@@ -99,6 +99,7 @@ function AddNewPost() {
             <div className="header-decoration"></div>
           </div>
 
+
           <form onSubmit={handleSubmit} className="create-post-form">
             <div className="form-floating-group">
               <div className="floating-input">
@@ -110,7 +111,7 @@ function AddNewPost() {
                   required
                   placeholder=" "
                 />
-                <label htmlFor="title">Post Title</label>
+                <label htmlFor="title">Recipe name</label>
               </div>
 
               <div className="floating-input">
@@ -122,7 +123,7 @@ function AddNewPost() {
                   placeholder=" "
                   rows={6}
                 />
-                <label htmlFor="description">Write your story...</label>
+                <label htmlFor="description">Write your recipe instructions...</label>
               </div>
 
               <div className="floating-input">
@@ -140,8 +141,8 @@ function AddNewPost() {
                   <option value="Protein & Fat Sources">Protein & Fat Sources</option>
                   <option value="Soups & Stews ">Soups & Stews </option>
                   <option value="Fast Food">Fast Food</option>
-                </select>
-                <label htmlFor="category">Select Category</label>
+                 </select>
+                <label htmlFor="category">Select A Food Category</label>
               </div>
             </div>
 
@@ -160,7 +161,7 @@ function AddNewPost() {
                     <span>+</span>
                   </div>
                   <h3>Add Media Files</h3>
-                  <p>Drag & drop or click to upload</p>
+                  <p>Drag & drop or click to upload media</p>
                   <small>Max: 3 images or 1 video (30s)</small>
                 </div>
               </label>
@@ -202,7 +203,7 @@ function AddNewPost() {
             </div>
 
             <button type="submit" className="publish-button">
-              Publish Post
+              Publish Recepy
             </button>
           </form>
         </div>
