@@ -140,8 +140,8 @@ function AddNewPost() {
                   <option value="Snacks ">Snacks </option>
                   <option value="Protein & Fat Sources">Protein & Fat Sources</option>
                   <option value="Soups & Stews ">Soups & Stews </option>
-                  <option value="Fast Food">Fast Food</option>
-                </select>
+                  <option value="Fast Food">Fast Food</option>
+                 </select>
                 <label htmlFor="category">Select A Food Category</label>
               </div>
             </div>
