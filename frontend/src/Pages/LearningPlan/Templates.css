@@ -1,8 +1,8 @@
 .template-preview-container {
   display: block;
   gap: 1.5rem;
-  padding: 1rem;
-  margin-bottom: 20px;
+  padding: 1.2rem;
+  margin-bottom: 24px;
   align-items: flex-start;
   padding-bottom: 20px;
   width: 100%;
@@ -57,8 +57,9 @@
 }
 
 .template:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px) scale(1.02);  /* Move up more and slightly zoom in */
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.25); /* Stronger, bigger shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .template-1 {
