@@ -93,7 +93,7 @@ function AddNewPost() {
         <div className="create-post-container">
           <div className="create-post-header">
             <div className="header-content">
-              <h1>Create Your Story</h1>
+              <h1>Create Your Story!</h1>
               <p>Share your ideas with the world</p>
             </div>
             <div className="header-decoration"></div>
@@ -110,7 +110,7 @@ function AddNewPost() {
                   required
                   placeholder=" "
                 />
-                <label htmlFor="title">Recipe name</label>
+
               </div>
 
               <div className="floating-input">
@@ -122,7 +122,7 @@ function AddNewPost() {
                   placeholder=" "
                   rows={6}
                 />
-                <label htmlFor="description">Write your recipe instructions...</label>
+
               </div>
 
               <div className="floating-input">
@@ -139,9 +139,9 @@ function AddNewPost() {
                   <option value="Snacks ">Snacks </option>
                   <option value="Protein & Fat Sources">Protein & Fat Sources</option>
                   <option value="Soups & Stews ">Soups & Stews </option>
-                  <option value="Fast Food">Fast Food</option>
+                  <option value="Fast Food">Fast Food</option>
                 </select>
-                <label htmlFor="category">Select A Food Category</label>
+
               </div>
             </div>
 
@@ -202,7 +202,7 @@ function AddNewPost() {
             </div>
 
             <button type="submit" className="publish-button">
-              Publish Recepy
+              Publish Post
             </button>
           </form>
         </div>
