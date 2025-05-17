@@ -1,8 +1,9 @@
+/* Template Preview Layout Styles */
 .template-preview-container {
   display: block;
   gap: 1.5rem;
-  padding: 1rem;
-  margin-bottom: 20px;
+  padding: 1.2rem;
+  margin-bottom: 24px;
   align-items: flex-start;
   padding-bottom: 20px;
   width: 100%;
@@ -57,8 +58,9 @@
 }
 
 .template:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px) scale(1.02);  /* Move up more and slightly zoom in */
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.25); /* Stronger, bigger shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .template-1 {
@@ -99,6 +101,7 @@
   border-radius: 8px;
   margin-top: 10px;
 }
+
 
 .preview_part_sub {
   flex: 1;
@@ -465,8 +468,17 @@
   border-radius: 8px;
   width: 48px;
   cursor: pointer;
-  transition: background 0.2s;
+  /*Smooth transition for scaling and background */
+  transition: background 0.2s, transform 0.2s; 
+
 }
+.material-add-btn:hover {
+  /* Slight zoom on hover */
+  transform: scale(1.05);
+  /* Change background color on hover */
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+}
+
 
 /* Media Section */
 .material-media-buttons {
@@ -474,7 +486,7 @@
   gap: 12px;
   margin-bottom: 20px;
 }
-
+/* Media button styles */
 .material-media-btn {
   flex: 1;
   display: flex;
