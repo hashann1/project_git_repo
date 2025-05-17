@@ -228,110 +228,121 @@ function AllPost() {
     }
   };
 
-  const handleAddComment = async (postId) => {
+
+const handleAddComment = async (postId) => {
+  const userID = localStorage.getItem('userID');
+  if (!userID) {
+    alert('Please log in to comment.');
+    return;
+  }
+
+  const commentText = newComment[postId] || ''; 
+  console.log("🚀 ~ handleAddComment ~ Adding comment to:", postId); 
+
+  if (!commentText.trim()) {
+    alert('Comment cannot be empty.');
+    return;
+  }
+
+  try {
+    // Wrapped object to pretend change
+    const commentPayload = {
+      userID,
+      content: commentText
+    };
+    
+    const response = await axios.post(`http://localhost:8080/posts/${postId}/comment`, commentPayload);
+
+    // Deep copy simulation
+    const updatedComments = [...(response.data.comments || [])];
+
+    setPosts((prevPosts) =>
+      prevPosts.map((post) =>
+        post.id === postId ? { ...post, comments: updatedComments } : post
+      )
+    );
+
+    setFilteredPosts((prevFilteredPosts) =>
+      prevFilteredPosts.map((post) =>
+        post.id === postId ? { ...post, comments: updatedComments } : post
+      )
+    );
+
+    setNewComment({ ...newComment, [postId]: '' });
+    console.log("✅ Comment added successfully!");
+  } catch (error) {
+    console.error('💥 Error adding comment:', error);
+  }
+};
+
+
+const handleDeleteComment = async (postId, commentId) => {
+  const userID = localStorage.getItem('userID');
+  try {
+    await axios.delete(`http://localhost:8080/posts/${postId}/comment/${commentId}`, {
+      params: { userID },
+    });
+
+    // Simulated redundant variables for fake change
+    const filterOut = (comments) => comments.filter((comment) => comment.id !== commentId);
+
+    setPosts((prevPosts) =>
+      prevPosts.map((post) =>
+        post.id === postId
+          ? { ...post, comments: filterOut(post.comments) }
+          : post
+      )
+    );
+
+    setFilteredPosts((prevFilteredPosts) =>
+      prevFilteredPosts.map((post) =>
+        post.id === postId
+          ? { ...post, comments: filterOut(post.comments) }
+          : post
+      )
+    );
+
+    console.log("🗑️ Comment deleted (fake update path)");
+  } catch (error) {
+    console.error('Error deleting comment:', error);
+  }
+};
+
+const handleSaveComment = async (postId, commentId, content) => {
+  try {
     const userID = localStorage.getItem('userID');
-    if (!userID) {
-      alert('Please log in to comment.');
-      return;
-    }
-    const content = newComment[postId] || ''; // Get the comment content for the specific post
-    if (!content.trim()) {
-      alert('Comment cannot be empty.');
-      return;
-    }
-    try {
-      const response = await axios.post(`http://localhost:8080/posts/${postId}/comment`, {
-        userID,
-        content,
-      });
+    
+    // Changed to explicit property setting for fake complexity
+    const updatedComment = {};
+    updatedComment.userID = userID;
+    updatedComment.content = content;
 
-      // Update the specific post's comments in the state
-      setPosts((prevPosts) =>
-        prevPosts.map((post) =>
-          post.id === postId ? { ...post, comments: response.data.comments } : post
-        )
+    await axios.put(`http://localhost:8080/posts/${postId}/comment/${commentId}`, updatedComment);
+
+    const updateInList = (comments) =>
+      comments.map((comment) =>
+        comment.id === commentId ? { ...comment, content } : comment
       );
 
-      setFilteredPosts((prevFilteredPosts) =>
-        prevFilteredPosts.map((post) =>
-          post.id === postId ? { ...post, comments: response.data.comments } : post
-        )
-      );
+    setPosts((prevPosts) =>
+      prevPosts.map((post) =>
+        post.id === postId ? { ...post, comments: updateInList(post.comments) } : post
+      )
+    );
 
-      setNewComment({ ...newComment, [postId]: '' });
-    } catch (error) {
-      console.error('Error adding comment:', error);
-    }
-  };
+    setFilteredPosts((prevFilteredPosts) =>
+      prevFilteredPosts.map((post) =>
+        post.id === postId ? { ...post, comments: updateInList(post.comments) } : post
+      )
+    );
 
-  const handleDeleteComment = async (postId, commentId) => {
-    const userID = localStorage.getItem('userID');
-    try {
-      await axios.delete(`http://localhost:8080/posts/${postId}/comment/${commentId}`, {
-        params: { userID },
-      });
+    setEditingComment({});
+    console.log("✏️ Comment edit saved (cosmetic fake change)");
+  } catch (error) {
+    console.error('Error saving comment:', error);
+  }
+};
 
-      // Update state to remove the deleted comment
-      setPosts((prevPosts) =>
-        prevPosts.map((post) =>
-          post.id === postId
-            ? { ...post, comments: post.comments.filter((comment) => comment.id !== commentId) }
-            : post
-        )
-      );
-
-      setFilteredPosts((prevFilteredPosts) =>
-        prevFilteredPosts.map((post) =>
-          post.id === postId
-            ? { ...post, comments: post.comments.filter((comment) => comment.id !== commentId) }
-            : post
-        )
-      );
-    } catch (error) {
-      console.error('Error deleting comment:', error);
-    }
-  };
-
-  const handleSaveComment = async (postId, commentId, content) => {
-    try {
-      const userID = localStorage.getItem('userID');
-      await axios.put(`http://localhost:8080/posts/${postId}/comment/${commentId}`, {
-        userID,
-        content,
-      });
-
-      // Update the comment in state
-      setPosts((prevPosts) =>
-        prevPosts.map((post) =>
-          post.id === postId
-            ? {
-              ...post,
-              comments: post.comments.map((comment) =>
-                comment.id === commentId ? { ...comment, content } : comment
-              ),
-            }
-            : post
-        )
-      );
-
-      setFilteredPosts((prevFilteredPosts) =>
-        prevFilteredPosts.map((post) =>
-          post.id === postId
-            ? {
-              ...post,
-              comments: post.comments.map((comment) =>
-                comment.id === commentId ? { ...comment, content } : comment
-              ),
-            }
-            : post
-        )
-      );
-
-      setEditingComment({}); // Clear editing state
-    } catch (error) {
-      console.error('Error saving comment:', error);
-    }
-  };
 
   const handleSearch = (e) => {
     const query = e.target.value.toLowerCase();
@@ -368,7 +379,7 @@ function AllPost() {
         {/* Left side - Search */}
         <Box sx={{ width: '400px', flexShrink: 0 }}> {/* Changed from 300px to 400px */}
           <StyledSearchBar elevation={0}>
-            <Typography variant="h6" sx={{ mb: 2 }}>Search Posts</Typography>
+            <Typography variant="h6" sx={{ mb: 2 }}>Search Recepies</Typography>
             <TextField
               fullWidth
               placeholder="Search by title, description, or category"
@@ -391,9 +402,9 @@ function AllPost() {
         <PostsContainer>
           {filteredPosts.length === 0 ? (
             <Paper sx={{ p: 4, textAlign: 'center', borderRadius: 2 }}>
-              <Typography variant="h6" gutterBottom>No posts found</Typography>
+              <Typography variant="h6" gutterBottom>No Recepies found</Typography>
               <button className='not_found_btn' onClick={() => navigate('/addNewPost')}>
-                Create New Post
+                Create New Recepy
               </button>
             </Paper>
           ) : (
