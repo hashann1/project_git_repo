@@ -94,7 +94,7 @@ function AddNewPost() {
           <div className="create-post-header">
             <div className="header-content">
               <h1>Create Your Story!</h1>
-              <p>Share your ideas with the world</p>
+              <p>Share your ideas with the world!</p>
             </div>
             <div className="header-decoration"></div>
           </div>
