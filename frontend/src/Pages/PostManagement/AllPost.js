@@ -40,8 +40,10 @@ const StyledSearchBar = styled(Paper)(({ theme }) => ({
   borderRadius: 0,
   boxShadow: 'none',
   borderRight: '1px solid rgba(0,0,0,0.12)',
-  marginTop: '60px'
+  marginTop: '60px',
+  // Dummy comment to trigger commit
 }));
+
 
 const PostsContainer = styled(Box)(({ theme }) => ({
   padding: '20px',
