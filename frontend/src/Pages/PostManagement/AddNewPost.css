@@ -1018,7 +1018,7 @@
   color: #2c5282;
 }
 
-.tag-remove-btn {
+.tag-remove-btn { /* Styles the remove button for tags*/
   display: flex;
   align-items: center;
   justify-content: center;
